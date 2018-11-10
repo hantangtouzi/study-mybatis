@@ -12,6 +12,7 @@
         <module>basic</module>
         <module>cache</module>
         <module>pagehelper</module>
+        <module>generator</module>
     </modules>
 
     <parent>
