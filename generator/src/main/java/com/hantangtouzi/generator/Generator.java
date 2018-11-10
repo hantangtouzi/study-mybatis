@@ -17,7 +17,7 @@ import java.util.List;
 public class Generator {
     public void generator() throws Exception {
 
-        String file="D:\\Tools\\idea\\projects\\study-mybatis\\generator\\src\\main\\resources\\generatorConfig.xml";
+        String file="generator\\src\\main\\resources\\generatorConfig.xml";
 
         List<String> warnings = new ArrayList<>();
         boolean overwrite = true;
