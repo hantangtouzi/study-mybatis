@@ -1,0 +1,10 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper为根元素，namespace指定了命名空间-->
+
+<mapper>
+    <select id="getUserById" parameterType="Integer" resultType="com.hantangtouzi.mybatis.helloworld.entity.User">
+        select id, username, password form t_user;
+    </select>
+</mapper>

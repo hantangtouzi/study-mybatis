@@ -20,9 +20,9 @@
             </transactionManager>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.jdbc.Driver" />
-                <property name="url" value="jdbc:mysql:///mybatis01" />
-                <property name="username" value="sa" />
-                <property name="password" value="sa" />
+                <property name="url" value="jdbc:mysql://localhost:3306/study_mybatis_helloworld?useUnicode=true" />
+                <property name="username" value="root" />
+                <property name="password" value="root" />
             </dataSource>
         </environment>
     </environments>

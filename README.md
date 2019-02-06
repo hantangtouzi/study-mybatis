@@ -11,9 +11,11 @@
 
 #### 安装教程
 
-1. xxxx
-2. xxxx
-3. xxxx
+1. helloworld
+2. basic
+3. cache
+4. generator
+5. pagehelper
 
 #### 使用说明
 
