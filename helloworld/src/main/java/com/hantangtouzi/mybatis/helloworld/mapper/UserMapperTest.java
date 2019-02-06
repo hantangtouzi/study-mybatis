@@ -17,7 +17,7 @@ import java.io.InputStream;
 public class UserMapperTest {
     public static void main(String[] args) {
         try {
-            User user = getUserById(1);
+            User user = getUserById(2);
         } catch (IOException e) {
             e.printStackTrace();
         }

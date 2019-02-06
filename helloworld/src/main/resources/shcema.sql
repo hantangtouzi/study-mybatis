@@ -12,3 +12,4 @@ create table t_user (
 );
 
 insert into t_user(id, username, password) values (1, 'a', 'a');
+insert into t_user(id, username, password) values (2, 'b', 'b');
