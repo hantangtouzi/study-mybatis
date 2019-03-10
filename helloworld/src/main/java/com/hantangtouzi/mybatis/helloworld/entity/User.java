@@ -1,7 +1,5 @@
 package com.hantangtouzi.mybatis.helloworld.entity;
 
-import java.io.InputStream;
-
 /**
  * @author WilliamChang.
  * Created on 2019-02-06 07:36:12
