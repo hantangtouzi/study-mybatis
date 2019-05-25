@@ -14,8 +14,6 @@ public class User {
 
     private int age;
 
-    private int deleteFlag;
-
     public int getId() {
         return id;
     }
@@ -48,11 +46,13 @@ public class User {
         this.age = age;
     }
 
-    public int getDeleteFlag() {
-        return deleteFlag;
-    }
-
-    public void setDeleteFlag(int deleteFlag) {
-        this.deleteFlag = deleteFlag;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", age=" + age +
+                '}';
     }
 }
