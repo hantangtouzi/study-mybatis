@@ -13,6 +13,7 @@
         <module>cache</module>
         <module>pagehelper</module>
         <module>generator</module>
+        <module>helloworld</module>
     </modules>
 
     <parent>
