@@ -18,6 +18,7 @@ public class UserDaoTest {
         UserDao userDao = sqlSession.getMapper(UserDao.class);
         User user = userDao.findUserById(1);
         System.out.println(user);
+        sqlSession.close();
         // Assert.assertEquals("zhangsan", user.getName());
     }
 }
