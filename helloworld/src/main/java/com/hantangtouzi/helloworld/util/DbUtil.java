@@ -29,6 +29,7 @@ public class DbUtil {
     }
 
     public static SqlSession getSqlSession() {
+        initDb();
         return getSessionFactory().openSession();
     }
 
