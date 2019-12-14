@@ -10,6 +10,8 @@ public class User {
     private String username;
     private String password;
     private String email;
+    private Integer companyId;
+    private Company company;
 
     public Integer getId() {
         return id;
@@ -43,6 +45,22 @@ public class User {
         this.email = email;
     }
 
+    public Integer getCompanyId() {
+        return companyId;
+    }
+
+    public void setCompanyId(Integer companyId) {
+        this.companyId = companyId;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -50,6 +68,8 @@ public class User {
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
+                ", companyId=" + companyId +
+                ", company=" + company +
                 '}';
     }
 }

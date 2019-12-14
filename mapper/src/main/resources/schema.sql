@@ -17,7 +17,8 @@ create table t_user (
   id int primary key auto_increment,
   username varchar(50),
   password varchar(20),
-  email varchar(100)
+  email varchar(100),
+  companyId int
 );
 
 insert into t_company (id, name) values (1, '浦发银行');
@@ -29,8 +30,8 @@ insert into t_role (id, name, description) values (2, '普通管理员', '拥有
 insert into t_role (id, name, description) values (3, '超级会员', '拥有系统的最高用户权限');
 insert into t_role (id, name, description) values (4, '普通会员', '拥有系统的普通用户权限');
 
-insert into t_user (id, username, password, email) values (1, 'zhangsan', 'zs', 'zhangsan@sina.com');
-insert into t_user (id, username, password, email) values (2, 'lisi', 'ls', 'lisi@sina.com');
+insert into t_user (id, username, password, email, companyId) values (1, 'zhangsan', 'zs', 'zhangsan@sina.com', 1);
+insert into t_user (id, username, password, email, companyId) values (2, 'lisi', 'ls', 'lisi@sina.com', 2);
 
 
 

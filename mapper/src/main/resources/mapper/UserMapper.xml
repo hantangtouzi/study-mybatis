@@ -5,7 +5,7 @@
 <mapper namespace="com.hantangtouzi.mapper.dao.UserDao">
 
     <sql id="base_column_list">
-        id, username, password, email
+        id, username, password, email, companyId
     </sql>
 
     <!--根据id查询用户-->
@@ -13,7 +13,7 @@
         select
         <include refid="base_column_list" />
         from t_user
-        where id = #{userId}
+        where id = #{id}
     </select>
 
     <!--查询所有的用户-->
