@@ -11,13 +11,14 @@
         </encoder>
     </appender>
 
-    <logger name="com.hantangtouzi.mapper" level="info" />
+    <logger name="com.hantangtouzi.mapper" level="debug" />
     <!--<logger name="ch.qos.logback" level="error" />-->
     <logger name="org.springframework" level="error" />
     <logger name="org.apache" level="error" />
     <logger name="com.zaxxer" level="error" />
     <!--<logger name="org.springframework.test" level="error" />-->
     <logger name="org.thymeleaf" level="error" />
+    <logger name="ch.qos.logback" level="error" />
 
     <!--<springProfile name="staging">-->
         <!--<logger name="com.hantangtouzi.jantent" level="error" />-->

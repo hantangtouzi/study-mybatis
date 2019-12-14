@@ -5,22 +5,33 @@
 <mapper namespace="com.hantangtouzi.mapper.dao.UserDao">
 
     <sql id="base_column_list">
-        id, username, password, email, companyId
+        u.id, u.username, u.password, u.email, u.companyId
     </sql>
 
+    <resultMap id="UserCompany" type="User">
+        <id property="id" column="id" />
+        <result property="username" column="username" />
+        <result property="password" column="password" />
+        <result property="email" column="email" />
+        <result property="companyId" column="companyId" />
+        <association property="company" javaType="Company">
+            <id property="id" column="company_id" />
+            <result property="name" column="company_name" />
+        </association>
+    </resultMap>
+
     <!--根据id查询用户-->
-    <select id="getUserById" resultType="User" parameterType="Integer">
-        select
-        <include refid="base_column_list" />
-        from t_user
-        where id = #{id}
+    <select id="getUserById" resultMap="UserCompany" parameterType="Integer">
+        select u.id, u.username, u.password, u.email, u.companyId, c.id as company_id, c.name as company_name
+        from t_user u, t_company c
+        where u.id = #{id} and u.companyId = c.id
     </select>
 
     <!--查询所有的用户-->
-    <select id="findUsers" resultType="User">
-        select
-        <include refid="base_column_list" />
-        from t_user
+    <select id="findUsers" resultMap="UserCompany">
+        select u.id, u.username, u.password, u.email, u.companyId, c.id as company_id, c.name as company_name
+        from t_user u, t_company c
+        where u.companyId = c.id
     </select>
 
     <!--查询符合条件的用户-->
