@@ -13,7 +13,7 @@
         select
         <include refid="base_column_list" />
         from t_company
-        where id = #{userId}
+        where id = #{id}
     </select>
 
     <!--查询所有的公司-->
