@@ -2,14 +2,14 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hantangtouzi.basic.mapper.RoleMapper">
+<mapper namespace="com.hantangtouzi.mapper.dao.RoleDao">
 
     <sql id="base_column_list">
         id, name, description
     </sql>
 
     <!--根据id查询角色-->
-    <select id="getRoleById" resultType="Role" parameterType="Long">
+    <select id="getRoleById" resultType="Role" parameterType="Integer">
         select
         <include refid="base_column_list"/>
         from t_role
@@ -32,7 +32,7 @@
     </select>
 
     <!--查询符合条件的角色总数-->
-    <select id="getTotalCount" resultType="Long" parameterType="Map">
+    <select id="getTotalCount" resultType="Integer" parameterType="Map">
         select count(id) from t_role
         <where>
             <if test="name!=null and name!=''">

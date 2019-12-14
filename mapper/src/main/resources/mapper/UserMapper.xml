@@ -2,14 +2,14 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hantangtouzi.basic.mapper.UserMapper">
+<mapper namespace="com.hantangtouzi.mapper.dao.UserDao">
 
     <sql id="base_column_list">
         id, username, password, email
     </sql>
 
     <!--根据id查询用户-->
-    <select id="getUserById" resultType="com.hantangtouzi.basic.entity.User" parameterType="Long">
+    <select id="getUserById" resultType="User" parameterType="Integer">
         select
         <include refid="base_column_list" />
         from t_user
@@ -17,14 +17,14 @@
     </select>
 
     <!--查询所有的用户-->
-    <select id="findUsers" resultType="com.hantangtouzi.basic.entity.User">
+    <select id="findUsers" resultType="User">
         select
         <include refid="base_column_list" />
         from t_user
     </select>
 
     <!--查询符合条件的用户-->
-    <select id="findUsersByPage" resultType="com.hantangtouzi.basic.entity.User" parameterType="Map">
+    <select id="findUsersByPage" resultType="User" parameterType="Map">
         select
         <include refid="base_column_list" />
         from t_user
@@ -36,7 +36,7 @@
     </select>
 
 	<!--查询符合条件的用户总数-->
-	<select id="getTotalCount" resultType="Long" parameterType="Map">
+	<select id="getTotalCount" resultType="Integer" parameterType="Map">
 		select count(id) from t_role
 		<where>
             <if test="username!=null and username!=''">
