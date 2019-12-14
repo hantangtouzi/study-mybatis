@@ -1,6 +1,7 @@
 package com.hantangtouzi.basic.mapper;
 
 import com.hantangtouzi.basic.entity.Role;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Map;
@@ -10,6 +11,7 @@ import java.util.Map;
  * Created on 2018/10/6 11:09 AM
  */
 
+@Repository
 public interface RoleMapper {
     Role getRoleById(Long roleId);
 

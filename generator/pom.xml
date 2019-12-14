@@ -12,6 +12,18 @@
     <artifactId>generator</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator-core</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.mybatis.generator</groupId>
+            <artifactId>mybatis-generator</artifactId>
+            <version>1.4.0</version>
+            <type>pom</type>
+        </dependency>
+
 
     </dependencies>
 

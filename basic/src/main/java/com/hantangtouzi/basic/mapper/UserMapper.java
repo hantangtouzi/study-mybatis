@@ -1,6 +1,7 @@
 package com.hantangtouzi.basic.mapper;
 
 import com.hantangtouzi.basic.entity.User;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created on 2018/10/6 11:04 AM
  */
 
+@Repository
 public interface UserMapper {
     User getUserById(Long userId);
 
