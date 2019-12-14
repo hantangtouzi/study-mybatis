@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hantangtouzi.mapper.dao.CompanyDao">
+
+    <sql id="base_column_list">
+        id, name
+    </sql>
+
+    <!--根据id查询公司-->
+    <select id="getCompanyById" resultType="Company" parameterType="Integer">
+        select
+        <include refid="base_column_list" />
+        from t_company
+        where id = #{userId}
+    </select>
+
+    <!--查询所有的公司-->
+    <select id="findCompanies" resultType="Company">
+        select
+        <include refid="base_column_list" />
+        from t_company
+    </select>
+
+    <!--查询符合条件的用户-->
+    <select id="findUsersByPage" resultType="User" parameterType="Map">
+        select
+        <include refid="base_column_list" />
+        from t_user
+        <where>
+            <if test="username!=null and username!=''">
+                and username = #{username}
+            </if>
+        </where>
+    </select>
+
+	<!--查询符合条件的用户总数-->
+	<select id="getTotalCount" resultType="Integer" parameterType="Map">
+		select count(id) from t_role
+		<where>
+            <if test="username!=null and username!=''">
+                and username = #{username}
+            </if>
+		</where>
+	</select>
+
+
+
+
+</mapper>
+

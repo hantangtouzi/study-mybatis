@@ -1,6 +1,11 @@
 drop table if exists t_role;
 drop table if exists t_user;
 
+create table t_company (
+  id int primary key auto_increment,
+  name varchar(250)
+);
+
 create table t_role (
   id int primary key auto_increment,
   name varchar(50),
@@ -13,6 +18,10 @@ create table t_user (
   password varchar(20),
   email varchar(100)
 );
+
+insert into t_company (id, name) values (1, '浦发银行');
+insert into t_company (id, name) values (2, '平安银行');
+insert into t_company (id, name) values (3, '民生银行');
 
 insert into t_role (id, name, description) values (1, '超级管理员', '拥有系统的最高管理权限');
 insert into t_role (id, name, description) values (2, '普通管理员', '拥有系统的普通管理权限');
