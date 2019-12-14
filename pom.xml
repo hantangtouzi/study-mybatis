@@ -14,6 +14,7 @@
         <module>pagehelper</module>
         <module>generator</module>
         <module>helloworld</module>
+        <module>mapper</module>
     </modules>
 
     <parent>
