@@ -2,6 +2,7 @@ package com.hantangtouzi.mapper.dao;
 
 import com.hantangtouzi.mapper.MapperApplication;
 import com.hantangtouzi.mapper.entity.Company;
+import com.hantangtouzi.mapper.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,10 @@ public class CompanyDaoTest {
     public void getCompanyById() {
         Company company = companyDao.getCompanyById(1);
         System.out.println(company);
+        List<User> users = company.getUsers();
+        for (User user : users) {
+            System.out.println(user);
+        }
     }
 
     @Test

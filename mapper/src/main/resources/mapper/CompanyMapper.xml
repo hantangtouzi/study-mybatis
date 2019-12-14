@@ -8,12 +8,24 @@
         id, name
     </sql>
 
+    <resultMap id="companyUser" type="Company">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+
+        <collection property="users" ofType="User" >
+            <id property="id" column="user_id" />
+            <result property="username" column="username" />
+            <result property="password" column="password" />
+            <result property="email" column="email" />
+            <result property="companyId" column="companyId" />
+        </collection>
+    </resultMap>
+
     <!--根据id查询公司-->
-    <select id="getCompanyById" resultType="Company" parameterType="Integer">
-        select
-        <include refid="base_column_list" />
-        from t_company
-        where id = #{id}
+    <select id="getCompanyById" resultMap="companyUser" parameterType="Integer">
+        select c.id, c.name, u.id as user_id, u.username, u.password, u.email, u.companyId
+        from t_company c, t_user u
+        where c.id = #{id} and c.id = u.companyId
     </select>
 
     <!--查询所有的公司-->

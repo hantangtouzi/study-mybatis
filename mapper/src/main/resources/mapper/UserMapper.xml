@@ -8,7 +8,7 @@
         u.id, u.username, u.password, u.email, u.companyId
     </sql>
 
-    <resultMap id="UserCompany" type="User">
+    <resultMap id="userCompany" type="User">
         <id property="id" column="id" />
         <result property="username" column="username" />
         <result property="password" column="password" />
@@ -21,14 +21,14 @@
     </resultMap>
 
     <!--根据id查询用户-->
-    <select id="getUserById" resultMap="UserCompany" parameterType="Integer">
+    <select id="getUserById" resultMap="userCompany" parameterType="Integer">
         select u.id, u.username, u.password, u.email, u.companyId, c.id as company_id, c.name as company_name
         from t_user u, t_company c
         where u.id = #{id} and u.companyId = c.id
     </select>
 
     <!--查询所有的用户-->
-    <select id="findUsers" resultMap="UserCompany">
+    <select id="findUsers" resultMap="userCompany">
         select u.id, u.username, u.password, u.email, u.companyId, c.id as company_id, c.name as company_name
         from t_user u, t_company c
         where u.companyId = c.id

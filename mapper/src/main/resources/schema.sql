@@ -31,7 +31,8 @@ insert into t_role (id, name, description) values (3, '超级会员', '拥有系
 insert into t_role (id, name, description) values (4, '普通会员', '拥有系统的普通用户权限');
 
 insert into t_user (id, username, password, email, companyId) values (1, 'zhangsan', 'zs', 'zhangsan@sina.com', 1);
-insert into t_user (id, username, password, email, companyId) values (2, 'lisi', 'ls', 'lisi@sina.com', 2);
+insert into t_user (id, username, password, email, companyId) values (2, 'lisi', 'ls', 'lisi@sina.com', 1);
+insert into t_user (id, username, password, email, companyId) values (3, 'wangwu', 'ww', 'wangwu@sina.com', 2);
 
 
 
